@@ -1,0 +1,40 @@
+<div *ngIf="details.hasData">
+	<h1 mat-dialog-title>BitCoin Transaction Details for {{details.hash}}</h1>
+	<div mat-dialog-content>
+		<ul id="transaction-details-list">
+			<li *ngFor="let det of details.data[0]; let i = index;">
+				<img class="bitcoin-detail-img" src="https://i.imgur.com/dZx0C9J.png" />
+				<span class="detail-name"><strong>{{details.data[0][i]}}</strong></span>
+				<span class="detail-value">{{details.data[1][i]}}</span>
+			</li>
+			<li>
+      <img class="bitcoin-detail-img" src="https://i.imgur.com/dZx0C9J.png" />
+			<span class="detail-name">
+        <strong>Blockcypher.com details for:</strong>
+      </span>
+			<span class="detail-value">
+        <a href="https://live.blockcypher.com/btc/tx/{{details.hash}}/"
+        target="_blank">{{details.hash}}</a>
+      </span>
+			</li>
+		</ul>
+	</div>
+	<div mat-dialog-actions>
+		<button mat-raised-button color="primary" [mat-dialog-close]="" cdkFocusInitial>Got it!</button>
+	</div>
+</div>
+<div *ngIf="!details.hasData">
+	<h1 mat-dialog-title>Couldn't get transaction details for {{details.hash}} transaction ID</h1>
+  <div mat-dialog-content>
+    <ul id="transaction-details-list">
+			<li>
+        <span class="detail-error"><strong>Error type: </strong>{{details.error.name}}</span>
+        <span class="detail-error"><strong>Error details: </strong>{{details.error.error.error}}</span>
+        <span class="detail-error"><strong>Error message: </strong>{{details.error.message}}</span>
+			</li>
+    </ul>
+  </div>
+	<div mat-dialog-actions>
+		<button mat-raised-button color="primary" [mat-dialog-close]="" cdkFocusInitial>Got it!</button>
+	</div>
+</div>

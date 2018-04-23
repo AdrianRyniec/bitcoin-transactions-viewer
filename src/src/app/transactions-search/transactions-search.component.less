@@ -1,0 +1,160 @@
+transactions-search {
+  margin-top: 50px;
+  position: relative;
+  display: block;
+
+  div#search-component {
+    text-align: center;
+    
+    form.transaction-search-form {
+
+      mat-form-field.mat-input-container {
+        display: block;
+        width: 550px;
+        margin: 0 auto;
+
+        &.error {
+
+          div.mat-input-flex {
+
+            div.mat-input-infix {
+
+              input.mat-input-element {
+                color: red;
+              }
+
+              span.mat-form-field-label-wrapper {
+                
+                label.mat-form-field-label {
+                  color: red;
+                }
+              }
+            }
+          }
+
+          div.mat-input-underline {
+
+            span.mat-input-ripple {
+              background-color: red;
+            }
+          }
+        }
+
+        div.mat-input-wrapper {
+
+          div.mat-input-flex {
+
+            div.mat-input-infix {
+
+              input#search-box {
+                width: 430px;
+                height: 20px;
+                border-width: 2px;
+                padding: 5px;
+                font-size: 12px;
+                display: inline-block;
+                float: left;
+              }
+
+              div#transaction-button {
+                display: inline-block;
+                visibility: none;
+                float: right;
+                height: 30px;
+                
+                button {
+                  background: #0b8ed8;
+                  border-color: #0b8ed8;
+                  color: #fff;
+                  height: 100%;
+                  line-height: 32px;
+                }
+              }
+
+              span.mat-form-field-label-wrapper {
+
+                label.mat-form-field-label {}
+              }
+            }
+          }
+          div.mat-input-underline {
+
+            span.mat-input-ripple {}
+          }
+          div.mat-input-subscript-wrapper {
+
+            div.mat-input-hint-wrapper {
+              display: block;
+
+              mat-hint.mat-hint {
+                display: inline-block;
+                float: left;
+                max-width: 430px;
+                
+                span {
+                  display: block;
+
+                  &.error {
+                    color: red;
+                    font-size: 13px;
+                  }
+                }
+              }
+
+              div.mat-input-hint-spacer {
+                display: none;
+              }
+
+              mat-hint.mat-hint.mat-right {
+                display: inline-block;
+                float: right;
+
+                strong {}
+              }
+            }
+          }
+        }
+      }
+    }
+    div#transaction-details {}
+  }
+
+  div.transaction-details-spinner, div.transaction-details-spinner-background {
+    display: inline-block;
+    position: absolute;
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
+    top: 25px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  div.transaction-details-spinner-background {
+    background-color: #000;
+    opacity: 0.2;
+    border-radius: 15px;
+  }
+
+  div.transaction-details-spinner {
+
+    mat-spinner.mat-spinner {
+      width: 50px;
+      height: 50px;
+      display: block;
+      position: relative;
+
+      svg {
+        width: 50px;
+        height: 50px;
+        
+        circle {
+          width: 50px;
+          height: 50px;
+          stroke: #592D88;
+        }
+      }
+    }
+  }
+}

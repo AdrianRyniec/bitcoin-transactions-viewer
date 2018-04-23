@@ -1,0 +1,83 @@
+div.cdk-overlay-pane {
+
+  div.cdk-visually-hidden {}
+
+  mat-dialog-container.mat-dialog-container {
+    background-color: #f5f5f5;
+
+    transaction-details-dialog.ng-star-inserted {
+      font-size: 15px;
+
+      div.ng-star-inserted {
+
+        h1.mat-dialog-title {
+          font-size: 20px;
+          color: #592D88;
+          font-weight: bold;
+          padding-bottom: 10px;
+          margin: 0;
+        }
+
+        div.mat-dialog-content {
+          padding-top: 10px;
+          background-color: #fff;
+
+          ul#transaction-details-list {
+            margin: 0;
+            padding: 0;
+
+            li, li.ng-star-inserted {
+              list-style: none;
+              margin-bottom: 10px;
+
+              img.bitcoin-detail-img {
+                width: 20px;
+                vertical-align: bottom;
+              }
+
+              span {
+                &.detail-name {
+                  margin-right: 5px;
+              
+                  strong {}
+                }
+
+                &.detail-value {
+                  color: #0b8ed8;
+                  
+                  a {}
+                }
+
+                &.detail-error {
+                  display: block;
+                  margin: 0 auto;
+                  font-weight: normal;
+
+                  strong {
+                    margin-right: 10px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        div.mat-dialog-actions {
+
+          button.mat-raised-button.mat-primary {
+            background: #0b8ed8;
+            border-color: #0b8ed8;
+            color: #fff;
+            height: 100%;
+            line-height: 32px;
+            margin: 0 auto;
+
+            span.mat-button-wrapper {}
+            div.mat-button-ripple.mat-ripple {}
+            div.mat-button-focus-overlay {}
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body {
+  font-family: myriad_pro_lightregular,helvetica,arial,sans-serif;
+}
+
+body app-root {}
+
+body app-root h1#main-title {
+  color: #592D88;
+}

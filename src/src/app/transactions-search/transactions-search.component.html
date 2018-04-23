@@ -1,0 +1,24 @@
+<div id="search-component">
+	<form class="transaction-search-form">
+		<mat-form-field [class.error]="(!isHashValid && isHashValid != null) || (!isLengthValid && isLengthValid != null)">
+			<input matInput maxlength="64" placeholder="Paste/type transaction id hash here..." #searchBox id="search-box" (input)="validate(searchBox.value)" />
+			<div id="transaction-button" [style.visibility]="isHashValid && isLengthValid ? 'visible' : 'hidden'">
+				<button (click)="getTransactionDetails(searchBox.value)" type="button" mat-raised-button color="primary">Check</button>
+			</div>
+			<mat-hint>
+			  <span class="error" *ngIf="!isHashValid && isHashValid != null">
+          Hash may be invalid!
+        </span>
+				<span class="error" *ngIf="!isLengthValid && isLengthValid != null">
+          Hash has less than required 64 characters!
+        </span>
+				<span>Paste or type Bitcoin transaction hash to check for particular transaction details. When given proper transaction hash, button appears. Click on that button to open popup with transaction details.</span>
+			</mat-hint>
+			<mat-hint align="end"><strong>{{searchBox.value.length}} / 64</strong></mat-hint>
+		</mat-form-field>
+	</form>
+</div>
+<div class="transaction-details-spinner-background" *ngIf="waitingForData"></div>
+<div class="transaction-details-spinner" *ngIf="waitingForData">
+  <mat-spinner [diameter]="diameter" [strokeWidth]="strokeWidth"></mat-spinner>
+</div>
